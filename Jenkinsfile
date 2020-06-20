@@ -1,15 +1,12 @@
 pipeline {
     agent any
-    options {
-        skipDefaultCheckout()
-    }
-
     stages {
-        stage('Build') {
-            agent any
-
+        stage("Build") {
+            when {
+                changeRequest()
+            }
             steps {
-                echo "Hello World"
+                echo "Pull Request Detected"
             }
         }
     }
