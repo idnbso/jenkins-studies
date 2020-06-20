@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage("Build") {
             when {
-                changeRequest()
+                //changeRequest()
+                changeRequest title: "when-pr"
             }
             steps {
                 echo "Pull Request Detected"
