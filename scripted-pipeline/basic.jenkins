@@ -1,0 +1,7 @@
+node {
+    stage('Build') {
+        node {
+            echo 'This is a node in a stage.'
+        }
+    }
+}

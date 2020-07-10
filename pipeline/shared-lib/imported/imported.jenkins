@@ -1,4 +1,5 @@
-@Library("pipeline-shared-lib@dev") _
+@Library("pipeline-shared-lib")
+import com.acceleratedskillup.*;
 
 pipeline {
     agent any
@@ -6,10 +7,10 @@ pipeline {
         stage('Build'){
             steps{
                 script{
-                    swissknife.printName 'John'
+					def calculator = new Calculator()					
+                    println calculator.add(1,2)
                 }
             }         
         }
     }
-   
 }

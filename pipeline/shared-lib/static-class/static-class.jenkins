@@ -1,4 +1,5 @@
-@Library("pipeline-shared-lib@dev") _
+@Library("pipeline-shared-lib")
+import static com.acceleratedskillup.ValidatorUtils.*;
 
 pipeline {
     agent any
@@ -6,10 +7,9 @@ pipeline {
         stage('Build'){
             steps{
                 script{
-                    swissknife.printName 'John'
+					validateInput(this)
                 }
             }         
         }
     }
-   
 }

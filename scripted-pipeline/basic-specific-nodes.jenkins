@@ -1,0 +1,7 @@
+node('master') {
+    node('Slave 1') {
+        stage('Build') {
+            echo 'This is a node in stage Slave 1'
+        }
+    }
+}
