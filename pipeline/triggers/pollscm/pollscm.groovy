@@ -1,17 +1,17 @@
 pipeline {
     agent any
     triggers {
-        pollSCM('* * * * *')				
+        pollSCM('* * * * *')
     }
     stages {
-        stage('Build') {				
+        stage('Build') {
             steps {
                 checkout([
-                    $class: 'GitSCM', 				
-                    branches: [[name: "origin/master"]], 
+                    $class: 'GitSCM',
+                    branches: [[name: 'origin/master']],
                     userRemoteConfigs: [[url: 'https://github.com/idnbso/jenkins-studies.git']]
                 ])
             }
-        }	
+        }
     }
 }
