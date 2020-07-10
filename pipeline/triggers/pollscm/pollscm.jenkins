@@ -9,7 +9,7 @@ pipeline {
                 checkout([
                     $class: 'GitSCM', 				
                     branches: [[name: "origin/master"]], 
-                    userRemoteConfigs: [[url: 'https://github.com/pipelineascodecourse/pipeline-triggers-pollSCM.git']]
+                    userRemoteConfigs: [[url: 'https://github.com/idnbso/jenkins-studies.git']]
                 ])
             }
         }	
