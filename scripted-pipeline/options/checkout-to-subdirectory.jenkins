@@ -1,0 +1,13 @@
+node{
+    // https://www.jenkins.io/doc/pipeline/steps/workflow-durable-task-step/#ws-allocate-workspace
+	ws("/var/lib/jenkins/workspace/scripted-checkoutToSubDirectory/someSubDir") {
+		checkout([$class: 'GitSCM',
+					branches: [[name: "origin/master"]], 
+					userRemoteConfigs: [[
+					url: 'https://github.com/idnbso/jenkins-studies.git']]
+					])
+		stage('Build'){
+			echo 'Hello World 1'
+		}
+	}
+}
