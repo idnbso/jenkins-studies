@@ -1,0 +1,4 @@
+node{
+	def mavenHome = tool name: 'maven3_3_9-3', type: 'maven'
+    sh "${mavenHome}/bin/mvn -v"
+}
