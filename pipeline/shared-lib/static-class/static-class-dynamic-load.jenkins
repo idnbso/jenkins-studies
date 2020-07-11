@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+    stages{
+        stage('Build'){
+            steps{
+                script{
+					library ("pipeline-shared-lib").com.acceleratedskillup.ValidatorUtils.validateInput(this)
+                }
+            }         
+        }
+    }
+}

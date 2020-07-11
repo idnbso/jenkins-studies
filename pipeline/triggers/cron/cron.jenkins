@@ -1,0 +1,22 @@
+pipeline {		
+    agent any		
+    triggers {		
+		//minute, hour, day of month, month, and day of week (0 and 7 are sundays)
+        //cron('0 1 10 7 1-7')
+		
+		// H is random vaue of range
+		cron('H */2 8-10 5,7 3-5')
+		
+		//@yearly, @annually, @monthly, @weekly, @daily, @midnight, @hourly
+		//cron('@daily')
+		
+		//cron('TZ=Europe/London\n0 1 * * 1-7')
+    }		
+    stages {		
+        stage('Build') {		
+            steps {		
+                echo 'Hello World'		
+            }		
+        }		
+    }		
+}

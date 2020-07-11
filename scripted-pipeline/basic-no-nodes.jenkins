@@ -1,0 +1,7 @@
+stage('Build') {
+    echo 'this is a scripted pipeline with stage Build'
+}
+
+stage('Deploy') {
+    echo 'this is a scripted pipeline with stage Deploy'
+}

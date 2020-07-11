@@ -1,0 +1,10 @@
+node{
+	stage('Build'){	
+	
+		//values: NANOSECONDS, MICROSECONDS, MILLISECONDS, SECONDS, MINUTES, HOURS, DAYS
+		timeout(time: 1, unit: 'SECONDS')  {
+			//sleeping for 2 seconds
+			sleep 2
+		}
+	}
+}

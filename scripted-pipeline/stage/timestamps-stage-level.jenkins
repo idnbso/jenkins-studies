@@ -1,0 +1,11 @@
+node{
+	stage('Build'){
+		timestamps {
+			echo 'echo statement printed out WITH timestamp'
+		}		
+	}
+	
+	stage('Deploy'){
+		echo 'echo statement printed out WITHOUT timestamp'
+	}
+}

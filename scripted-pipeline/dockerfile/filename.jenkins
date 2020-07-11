@@ -1,0 +1,15 @@
+node {
+    stage('Build') {
+        checkout([$class: 'GitSCM',
+        branches: [[name: 'origin/master']],
+        userRemoteConfigs: [[url: 'https://github.com/idnbso/jenkins-studies.git']]
+        ])
+        
+        def myCustomUbuntuImage = docker.build('my-ubuntu:my-latest', 
+                                               '-f scripted-pipeline/dockerfile/dockerfileDir/myCustomNameDockerfile scripted-pipeline/dockerfile/dockerfileDir')
+
+        myCustomUbuntuImage.inside {
+            sh 'cat /etc/lsb-release'
+        }
+    }
+}

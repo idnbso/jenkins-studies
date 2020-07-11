@@ -1,0 +1,15 @@
+@Library("pipeline-shared-lib")
+import static com.acceleratedskillup.ValidatorUtils.*;
+
+pipeline {
+    agent any
+    stages{
+        stage('Build'){
+            steps{
+                script{
+					validateInput(this)
+                }
+            }         
+        }
+    }
+}
