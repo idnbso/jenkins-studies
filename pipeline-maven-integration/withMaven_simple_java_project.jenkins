@@ -1,0 +1,18 @@
+node{
+  stage ('Build') {
+	cleanWs()
+    git url: 'https://github.com/pipelineascodecourse/simple_java_project'
+
+    withMaven(
+        options: [junitPublisher(disabled: true), artifactsPublisher(disabled: true)],
+        maven: 'maven3_3_9-3',
+        //mavenLocalRepo: '/var/lib/jenkins/local_maven_repo' // takes precedence over the other related settings
+        //mavenSettingsConfig: '' // fill with config id from jenkins, takes precedence over mavenSettingsFilePath
+        //mavenSettingsFilePath: '/etc/maven/settings.xml'
+        //jdk: 'java11'
+        //mavenOpts: '-XX:+PrintCommandLineFlags -XX:+UseConcMarkSweepGC'
+        ) {
+      sh "mvn -X clean install"
+    }
+  }
+}
