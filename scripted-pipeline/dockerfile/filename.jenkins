@@ -5,7 +5,8 @@ node {
         userRemoteConfigs: [[url: 'https://github.com/idnbso/jenkins-studies.git']]
         ])
         
-        def myCustomUbuntuImage = docker.build('my-ubuntu:my-latest', '/scripted-pipeline/dockerfile/dockerfileDir')
+        def myCustomUbuntuImage = docker.build('my-ubuntu:my-latest', 
+                                               'scripted-pipeline/dockerfile/dockerfileDir/myCustomNameDockerfile')
 
         myCustomUbuntuImage.inside {
             sh 'cat /etc/lsb-release'
