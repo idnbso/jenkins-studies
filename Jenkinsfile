@@ -6,6 +6,6 @@ node {
 	)
 
     stage('Build') {	
-		echo 'Hello World 4'
+		echo 'Hello World 5'
     }	
 }
