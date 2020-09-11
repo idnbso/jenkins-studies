@@ -1,0 +1,14 @@
+pipeline {							
+    agent any							
+    parameters {							
+        string(name: 'deployEnv')
+    }
+    stages {							
+        stage('Build') {							
+            steps {					
+                echo "child job 2 input param deployEnv: ${params.deployEnv}"
+                echo "child job 2 input param deployEnv: ${deployEnv}"
+            }							
+        }							
+    }							
+}

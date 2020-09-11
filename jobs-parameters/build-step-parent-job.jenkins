@@ -1,0 +1,20 @@
+pipeline {							
+    agent any							
+    stages {							
+        stage('Build') {			
+            steps {					
+                def buildJobReturnValue = build	job: 'build-step-child-job1', 
+                        parameters: [[$class: "StringParameterValue", 
+                                    name: "deployEnv", 
+                                    value: "development env"]],
+                        propagate: true
+
+                echo "buildJobReturnValue.result: ${buildJobReturnValue.result}"
+				/*
+				build 	job: 'build-step-child-job1', 
+						parameters: [string(name: 'deployEnv', value: 'development env')]									
+				*/
+            }							
+        }							
+    }							
+}
